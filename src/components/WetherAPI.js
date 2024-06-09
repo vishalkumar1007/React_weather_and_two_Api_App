@@ -51,7 +51,9 @@ function WetherAPI({API, WetherBgcolor, NavValue, SearchPlaceholder}) {
 
 
   React.useEffect(() => {
-    console.log('runTime', SearchValue);
+    if(SearchValue!=='' && SearchValue!==undefined){
+      console.log('runTime', SearchValue);
+    }
   }, [SearchValue, finalInputValue]);
 
   React.useEffect(() => {
@@ -93,9 +95,9 @@ function WetherAPI({API, WetherBgcolor, NavValue, SearchPlaceholder}) {
         <SearchBar API={API} NavValue={NavValue} SearchPlaceholder={SearchPlaceholder} BgColor={`${WetherBgcolor}`} onValueChange={updateSearchValue} onClickValue={finalInputValuePush} />
       </Box>
       <CssBaseline />
-      <Box sx={{ position: 'absolute', top: 110, left: 0, width: '100%',
+      <Box sx={{ position: 'absolute', top: 30, left: 0, width: '100%',
         '@media (max-width: 600px)': {
-          top: 200,
+          top: 100,
         }
       }}>
       <WeatherCard sx={{ width: '90%', maxWidth: '600px' , bgcolor:'#032105a3', boxShadow: '0px 0px 20px #90989285'}}>
@@ -168,11 +170,6 @@ function QualityInfo({ label, value }) {
     </Box>
   );
 }
-
-
-// Continued from the previous code snippet...
-
-// Icons
 
 function DropletsIcon() {
   return (

@@ -50,11 +50,11 @@ function App() {
     const localTab = parseInt(localStorage.getItem('tab_no'), 10);
     switch (localTab) {
       case 1:
-        return <JsonAPI API={'JsonAPI'} JsonBgColor={'#001327'} NavValue={'User Data'} SearchPlaceholder={'Search and Filter ...'}/>;
+        return <JsonAPI API={'JsonAPI'} JsonBgColor={'#001327'} NavValue={'User Data'} SearchPlaceholder={'Filter User ...'}/>;
       case 2:
         return <WetherAPI API={'WetherAPI'} WetherBgcolor={"#001002"} NavValue={'Wether Data'} SearchPlaceholder={'Search Location ...'}/>;
       case 3:
-        return <DogAPI API={'DogAPI'} DogBgColor={"#18001c"} NavValue={'Dog Img'} SearchPlaceholder={'Search Dog ...'}/>;
+        return <DogAPI API={'DogAPI'} DogBgColor={"#18001c"} NavValue={'Dog Img'} SearchPlaceholder={'Search Dog Breed ...'}/>;
       default:
         return null;
     }
@@ -89,7 +89,7 @@ function App() {
           },
         }}
       >
-        <Box sx={{ maxWidth: "850px", height: "100%" }}>
+        <Box sx={{ maxWidth: "850px",width:'100%', height: "87%", position:'fixed',marginTop:'70px'}}>
           {ShowTabData()}
         </Box>
       </Box>

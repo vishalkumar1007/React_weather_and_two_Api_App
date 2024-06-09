@@ -14,7 +14,6 @@ function DogAPI({ API, DogBgColor, NavValue, SearchPlaceholder }) {
   useEffect(() => {
     if (SearchValue !== '') {
       const fetchBreedData = async () => {
-        console.log("value :", SearchValue);
         const DogAPI = `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${SearchValue}&api_key=live_5Rqq5v1Tfftx6wUxpK7iwFINZf9tFJ42gLvMkcm4Smb3flq359gRBF2Ce4rcHuc2`;
         await axios
           .get(DogAPI)
@@ -42,7 +41,7 @@ function DogAPI({ API, DogBgColor, NavValue, SearchPlaceholder }) {
 
   const finalUserInput = (val) => {
     setSearchValue(val);
-    console.log('this is dogAPi : ', val);
+
   };
 
   return (
@@ -52,9 +51,9 @@ function DogAPI({ API, DogBgColor, NavValue, SearchPlaceholder }) {
       </Box>
       <CssBaseline />
       <Box sx={{
-        position: 'absolute', top: 110, left: 0, width: '100%',
+        position: 'absolute', top: 55, left: 0, width: '100%',
         '@media (max-width: 600px)': {
-          top: 200,
+          top: 120,
         }
       }}>
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '10px', boxSizing: 'border-box' }}>
@@ -78,25 +77,24 @@ function DogAPI({ API, DogBgColor, NavValue, SearchPlaceholder }) {
   );
 }
 
-// DogCard styled component
+
 const DogCard = styled('div')({
   background: 'linear-gradient(50deg, #32013aab, #35043d, #32013aab)',
   padding: '1rem',
   borderRadius: '1.5rem',
   maxWidth: '650px',
-  height: '436px', // Adjust the height as needed
-  margin: '10px', // Add margin for shadow space
+  height: '436px', 
+  margin: '10px', 
   color: 'white',
-  overflow: 'auto', // Enables scrolling
-  scrollbarWidth: 'none', // Firefox
-  '-ms-overflow-style': 'none', // Internet Explorer 10+
+  overflow: 'auto',
+  scrollbarWidth: 'none', 
+  '-ms-overflow-style': 'none', 
   '&::-webkit-scrollbar': {
-    display: 'none', // Safari and Chrome
+    display: 'none', 
   },
   boxShadow: '0px 0px 15px #90989285',
 });
 
-// SmallCard styled component
 const SmallCard = styled('div')({
   width: '180px',
   height: '180px',
@@ -108,6 +106,5 @@ const SmallCard = styled('div')({
   borderRadius: '10px',
 });
 
-// Icons
 
 export default DogAPI;
