@@ -123,7 +123,7 @@ function App() {
             sx={{ color: "#499bed", bgcolor: bgColor1 }}
             onClick={() => handleTabChange(1)}
           >
-            Json API
+            User API
           </Button>
           <Button
             variant="outlined"
