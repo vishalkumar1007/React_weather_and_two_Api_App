@@ -78,13 +78,13 @@ function WetherAPI({API, WetherBgcolor, NavValue, SearchPlaceholder}) {
       .catch((error) => {
         if (error.response) {
           console.error(`HTTP error : ${error.response.status}`);
-          console.warn(`HTTP error : ${error.response.status}`);
+          alert(`HTTP error : ${error.response.status}`);
         } else if (error.request) {
           console.error("Request error : No response received");
-          console.warn(`error.request : ${error.request}`);
+          alert(`error.request : ${error.request}`);
         } else {
           console.error("Error :", error.message);
-          console.warn(`error.message : ${error.messages}`);
+          alert(`error.message : ${error.messages}`);
         }
       });
 
