@@ -53,7 +53,7 @@ function DogAPI({ API, DogBgColor, NavValue, SearchPlaceholder }) {
       <Box sx={{
         width: '100%',height:'95%',display:'flex',justifyContent:'center',alignItems:'center'
       }}>
-        <Box sx={{width:'100%',height:'100%', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '10px', boxSizing: 'border-box'}}>
+        <Box sx={{width:'95%',height:'100%', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '10px', boxSizing: 'border-box'}}>
           <DogCard>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
               {DogApiData === 'no data' ? (

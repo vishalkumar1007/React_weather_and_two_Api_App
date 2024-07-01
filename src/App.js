@@ -84,10 +84,6 @@ function App() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          "@media (max-width: 375px)": {
-            height: "13%",
-            alignItems: "center",
-          },
         }}
       >
         <Box
@@ -106,7 +102,7 @@ function App() {
             sx={{ color: "#499bed", bgcolor: bgColor1 ,height:'90%'}}
             onClick={() => handleTabChange(1)}
           >
-            User API
+            User
           </Button>
           <Button
             variant="outlined"
@@ -114,7 +110,7 @@ function App() {
             sx={{ color: "#42b648", bgcolor: bgColor2 ,height:'90%'}}
             onClick={() => handleTabChange(2)}
           >
-            Weather API
+            Weather
           </Button>
           <Button
             variant="outlined"
@@ -122,7 +118,7 @@ function App() {
             sx={{ color: "#ca32e4", bgcolor: bgColor3 ,height:'90%'}}
             onClick={() => handleTabChange(3)}
           >
-            Dog API
+            Cat
           </Button>
         </Box>
       </Box>
