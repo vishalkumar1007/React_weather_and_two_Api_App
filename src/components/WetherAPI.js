@@ -90,15 +90,12 @@ function WetherAPI({API, WetherBgcolor, NavValue, SearchPlaceholder}) {
   }
 
   return (
-    <Box sx={{bgcolor:'gray'}}>
-      <Box sx={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 2 }}>
+    <Box sx={{ width:'100%',height:'100%'}}>
+      <Box sx={{width:'100%',height:'10%'}}>
         <SearchBar API={API} NavValue={NavValue} SearchPlaceholder={SearchPlaceholder} BgColor={`${WetherBgcolor}`} onValueChange={updateSearchValue} onClickValue={finalInputValuePush} />
       </Box>
       <CssBaseline />
-      <Box sx={{ position: 'absolute', top: 30, left: 0, width: '100%',
-        '@media (max-width: 600px)': {
-          top: 100,
-        }
+      <Box sx={{width: '100%', height:'90%', display:'flex',justifyContent:'center',alignItems:'center',
       }}>
       <WeatherCard sx={{ width: '90%', maxWidth: '600px' , bgcolor:'#032105a3', boxShadow: '0px 0px 20px #90989285'}}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -115,7 +112,11 @@ function WetherAPI({API, WetherBgcolor, NavValue, SearchPlaceholder}) {
             </Box>
           </Box>
           <Typography variant="subtitle1" py={2} sx={{fontWeight:'100'}}>{wetherData.location.localtime}</Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
+          <Box sx={{ display: 'flex',justifyContent:'space-around', gap:'30px' , overflowX:'scroll' , 
+              '&::-webkit-scrollbar': {
+                display: 'none',
+              },
+          }}>
             <WeatherInfo icon={<UmbrellaIcon />} value={`${wetherData.current.cloud}%`} label="Cloud" />
             <WeatherInfo icon={<DropletsIcon />} value={`${wetherData.current.humidity}%`} label="Humidity" />
             <WeatherInfo icon={<WindIcon />} value={`${wetherData.current.wind_kph}km/h`} label="Wind Speed" />
@@ -123,7 +124,11 @@ function WetherAPI({API, WetherBgcolor, NavValue, SearchPlaceholder}) {
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', py: 4 }}>
             <Box sx={{width:'100%', display:'flex', flexDirection:'column', gap:'10px'}} >
               <Typography variant="subtitle1" sx={{fontWeight:'400'}}>Air Quality</Typography>
-              <Box sx={{ width:'100%',display: 'flex', justifyContent:'space-around' }} >
+              <Box sx={{ width:'100%',display: 'flex',justifyContent:'space-between', gap:'60px' , overflowX:'scroll' ,
+                '&::-webkit-scrollbar': {
+                  display: 'none',
+                },
+              }} >
                 <QualityInfo  value={`AQI ${wetherData.current.air_quality.co}% CO2`} />
                 <QualityInfo value={`AQI ${wetherData.current.air_quality.no2}% NO2`} />
                 <QualityInfo value={`AQI ${wetherData.current.air_quality.so2}% SO2`} />
@@ -148,7 +153,7 @@ function WetherAPI({API, WetherBgcolor, NavValue, SearchPlaceholder}) {
 
 function WeatherInfo({ icon, value, label }) {
   return (
-    <Box sx={{bgcolor:`${bgColorLight}`, padding:'10px 10px',borderRadius:'10px', boxSizing:'border-box', textAlign: 'center' , width:'100px'}}>
+    <Box sx={{bgcolor:`${bgColorLight}`, padding:'10px 10px',borderRadius:'10px', boxSizing:'border-box', textAlign: 'center' , minWidth: '100px' ,maxWidth:'104px'}}>
       {icon}
       <Typography variant="subtitle2" mt={0.5}>{value}</Typography>
       <Typography variant="caption">{label}</Typography>
@@ -159,7 +164,7 @@ function WeatherInfo({ icon, value, label }) {
 // Quality Info component
 function QualityInfo({ label, value }) {
   return (
-    <Box sx={{bgcolor:`${bgColorLight}`, padding:' 10px 5px' ,borderRadius:'10px', boxSizing:'border-box', textAlign: 'center' , display:'flex',flexDirection:'column' , alignItems:'center' , gap:'10px' ,
+    <Box sx={{bgcolor:`${bgColorLight}`, padding:' 10px 5px' ,borderRadius:'10px', boxSizing:'border-box', textAlign: 'center' , display:'flex',flexDirection:'column' , alignItems:'center' , gap:'10px' ,minWidth: '80px' ,maxWidth:'84px',
     '@media (max-width: 600px)': {
       maxWidth:'80px'
     }

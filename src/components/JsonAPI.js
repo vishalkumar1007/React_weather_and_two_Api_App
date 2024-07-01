@@ -54,19 +54,15 @@ function JsonAPI({ API, JsonBgColor, NavValue, SearchPlaceholder }) {
     }
   };
   return (
-    <Box sx={{ pb: 7, width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'end' }} ref={ref}>
-      <Box sx={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 1 }}>
+    <Box sx={{ width: '100%', height: '100%',color:'white'}} ref={ref}>
+      <Box sx={{ width: '100%',height:'10%' }}>
         <SearchBar API={API} NavValue={NavValue} SearchPlaceholder={SearchPlaceholder} BgColor={`${JsonBgColor}`} onValueChange={setSearchValue} onClickValue={setSearchValue} />
       </Box>
-      <Box sx={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <CssBaseline style={{ position: 'fixed' }} />
+      <Box sx={{ width: '100%', height: '90%',display:'flex',justifyContent:'center',alignItems:'center' }}>
+        {/* <CssBaseline style={{ position: 'fixed' }} /> */}
         <Box sx={{
-          bgcolor: '#000a15', width: '90%', maxWidth: '550px', height: '86%', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '20px', borderRadius: '15px', flexDirection: 'column', overflow: 'hidden',
-          '@media (max-width: 600px)': {
-            top: 40,
-            height: '85.5%',
-            overflow: 'scroll',
-          },
+          bgcolor: '#000a15', width: '90%', maxWidth: '550px', height: '92%', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '15px', flexDirection: 'column', overflow: 'hidden' , maxHeight:'690px',
+          
           '&::-webkit-scrollbar': {
             display: 'none',
           },
@@ -116,11 +112,12 @@ function JsonAPI({ API, JsonBgColor, NavValue, SearchPlaceholder }) {
                 </Box>
               </Box>
             ))}
+          
           </Box>
         </Box>
-      </Box>
-      <Box sx={{ width: '80px', height: '35px', position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <Input type="number" aria-label="Demo input" placeholder="Limit." min="0" max="100" onInput={handleInput} onChange={(event) => setLimit(event.target.value)} />
+        <Box sx={{position:'absolute',bottom:'0.5%', width: '75px', height: '35px' }}>
+            <Input type="number" aria-label="Demo input" placeholder="Limit." min="0" max="100" onInput={handleInput} onChange={(event) => setLimit(event.target.value)} />
+          </Box>
       </Box>
     </Box>
   );
@@ -134,22 +131,19 @@ const Input = React.forwardRef(function CustomInput(props, ref) {
 
 const InputElement = styled('input')(
   ({ theme }) => `
-  width: 70px;
-  // height:32px;
+  width: 70%;
+  height: 100%;
+  text-align: center;
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  line-height: 1.5;
-  padding: 6px 19px;
+  padding: 6px 5px;
   border-radius: 8px;
   color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
-  background-color:#39404375;
+  background-color: #39404375;
   border: 1px solid gray;
   backdrop-filter: blur(20px);
-  color:#bbbbbb;
-  display: flex;
-  flexDirection: column;
-  justifyContent: center;
+  color:white;
   &:hover {
     border-color: ${blue[400]};
   }
@@ -162,9 +156,10 @@ const InputElement = styled('input')(
   &:focus-visible {
     outline: 0;
   }
-     &::-webkit-inner-spin-button,
+
+  &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
-    display:none;
+    display: none;
   }
 `
 );

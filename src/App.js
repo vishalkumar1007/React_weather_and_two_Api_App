@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-
 import { Box, Button } from "@mui/material";
 import JsonAPI from "./components/JsonAPI";
 import WetherAPI from "./components/WetherAPI";
@@ -66,41 +65,26 @@ function App() {
         backgroundColor: "#101010",
         width: "100vw",
         height: "100dvh",
+        
       }}
     >
       <Box
         sx={{
           width: "100%",
-          height: "92%",
-          overflow: "scroll",
-          "&::-webkit-scrollbar": {
-            width: "0px",
-            height: "0px",
-          },
-          "&::-webkit-scrollbar-thumb": {
-            backgroundColor: "transparent",
-          },
-          scrollbarWidth: "none",
-          color: "white",
-          display: "flex",
-          justifyContent: "center",
-          "@media (max-width: 375px)": {
-            height: "87%",
-          },
+          height: "90%",
         }}
       >
-        <Box sx={{ maxWidth: "850px",width:'100%', height: "87%", position:'fixed',marginTop:'70px'}}>
+        <Box sx={{width:'100%', height: "90%", position:'fixed'}}>
           {ShowTabData()}
         </Box>
       </Box>
       <Box
         sx={{
           width: "100%",
-          height: "8%",
+          height: "10%",
           display: "flex",
           justifyContent: "center",
-          alignItems: "top",
-          paddingTop: "30px",
+          alignItems: "center",
           "@media (max-width: 375px)": {
             height: "13%",
             alignItems: "center",
@@ -120,7 +104,7 @@ function App() {
           <Button
             variant="outlined"
             color="primary"
-            sx={{ color: "#499bed", bgcolor: bgColor1 }}
+            sx={{ color: "#499bed", bgcolor: bgColor1 ,height:'90%'}}
             onClick={() => handleTabChange(1)}
           >
             User API
@@ -128,7 +112,7 @@ function App() {
           <Button
             variant="outlined"
             color="success"
-            sx={{ color: "#42b648", bgcolor: bgColor2 }}
+            sx={{ color: "#42b648", bgcolor: bgColor2 ,height:'90%'}}
             onClick={() => handleTabChange(2)}
           >
             Weather API
@@ -136,7 +120,7 @@ function App() {
           <Button
             variant="outlined"
             color="secondary"
-            sx={{ color: "#ca32e4", bgcolor: bgColor3 }}
+            sx={{ color: "#ca32e4", bgcolor: bgColor3 ,height:'90%'}}
             onClick={() => handleTabChange(3)}
           >
             Dog API

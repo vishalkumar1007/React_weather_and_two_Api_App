@@ -45,16 +45,13 @@ function DogAPI({ API, DogBgColor, NavValue, SearchPlaceholder }) {
   };
 
   return (
-    <Box sx={{ pb: 7 }}>
-      <Box sx={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 1 }}>
+    <Box sx={{ pb: 7 ,width:'100%',height:'100%'}}>
+      <Box sx={{ width: '100%', zIndex: 1, height:'10%' }}>
         <SearchBar API={API} NavValue={NavValue} SearchPlaceholder={SearchPlaceholder} BgColor={`${DogBgColor}`} onValueChange={updateSearchValue} onClickValue={finalUserInput} userFinalInput={finalUserInput} />
       </Box>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       <Box sx={{
-        position: 'absolute', top: 55, left: 0, width: '100%',
-        '@media (max-width: 600px)': {
-          top: 120,
-        }
+        width: '100%',height:'95%',display:'flex',justifyContent:'center',alignItems:'center',
       }}>
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '10px', boxSizing: 'border-box' }}>
           <DogCard>
