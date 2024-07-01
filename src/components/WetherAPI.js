@@ -52,7 +52,6 @@ function WetherAPI({API, WetherBgcolor, NavValue, SearchPlaceholder}) {
 
   React.useEffect(() => {
     if(SearchValue!=='' && SearchValue!==undefined){
-      console.log('runTime', SearchValue);
     }
   }, [SearchValue, finalInputValue]);
 
@@ -74,16 +73,18 @@ function WetherAPI({API, WetherBgcolor, NavValue, SearchPlaceholder}) {
     axios
       .get(wetherApi)
       .then((response) => {
-        console.log("Data received:", response.data);
         setWetherData(response.data);
       })
       .catch((error) => {
         if (error.response) {
-          console.error(`HTTP error: ${error.response.status}`);
+          console.error(`HTTP error : ${error.response.status}`);
+          console.warn(`HTTP error : ${error.response.status}`);
         } else if (error.request) {
-          console.error("Request error: No response received");
+          console.error("Request error : No response received");
+          console.warn(`error.request : ${error.request}`);
         } else {
-          console.error("Error:", error.message);
+          console.error("Error :", error.message);
+          console.warn(`error.message : ${error.messages}`);
         }
       });
 

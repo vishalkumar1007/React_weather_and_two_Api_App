@@ -64,8 +64,7 @@ function App() {
       sx={{
         backgroundColor: "#101010",
         width: "100vw",
-        height: "100dvh",
-        
+        height: "100dvh"
       }}
     >
       <Box
