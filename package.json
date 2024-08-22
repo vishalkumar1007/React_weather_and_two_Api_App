@@ -1,7 +1,7 @@
 {
   "name": "gobananas-assignment",
   "version": "0.1.0",
-  "homepage": "https://vishalkumar07.me/React_weather_and_two_Api_App",
+  "homepage": "https://vishalkumar07.me/News_api",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
@@ -14,6 +14,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
+    "gobananas-assignment": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
